@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html style="width: 100%; height: 100%;">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Pape Productions</title>
+
+   <link rel="stylesheet" href="css/index.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="js/index.js"></script>
+</head>
+
+<body>
+   <div id="bg_shader"></div>
+   
+   <div id="continue_arrow_wrapper">
+      <div id="continue_arrow"></div>
+   </div>
+      
+   </div>
+   <div id="inner_body">
+      <div id="menu">
+         <a id="home_btn" class="menu_btn" href="#home">H O M E</a>
+         <div class="menu_separator"></div>
+         <a id="about_btn" class="menu_btn" href="#about">A B O U T</a>
+         <div class="menu_separator"></div>
+         <a id="samples_btn" class="menu_btn" href="#samples">S A M P L E S</a>
+         <div class="menu_separator"></div>
+         <a id="bookings_btn" class="menu_btn" href="#bookings">B O O K I N G S</a>
+      </div>
+
+      <div id="content">
+         <div id="left-padder" class="padder"></div>
+         <div id="content_main">
+            <section id="home">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a metus a posuere. Etiam sit amet urna mauris.
+               Nulla tempor bibendum nisi, dictum viverra orci ornare a. Curabitur ac rhoncus sapien, nec commodo sapien. Maecenas
+               ligula lacus, interdum sed ornare et, suscipit sed odio. Praesent sed velit in arcu vulputate sollicitudin. Duis ipsum
+               dui, fermentum ac elit varius, placerat pellentesque lorem. Donec facilisis metus id velit dapibus, in rhoncus quam
+               iaculis. Aenean eget magna sed velit convallis mollis ac ut nibh. Nam sagittis malesuada facilisis. Nam sed lacus
+               mattis, scelerisque nibh imperdiet, condimentum nulla.
+            </section>
+            <br/><br />
+            <section id="about">
+               Quisque egestas, sem ac suscipit imperdiet, ante nibh sollicitudin sem, quis molestie urna tellus et dolor. Aliquam
+               lacinia bibendum posuere. Fusce sagittis augue neque, ac varius nulla vulputate eu. Phasellus fermentum vitae lectus
+               maximus tempor. Phasellus a nunc id tellus imperdiet laoreet nec eu lectus. Phasellus lacinia, mi non tincidunt finibus,
+               mauris arcu pulvinar dui, in tempor neque nibh id tellus. Nunc ut lacinia elit. Cras venenatis, nisl vel dignissim
+               faucibus, lacus lorem vehicula mauris, quis egestas metus felis in metus. Quisque ac commodo mauris.
+            </section>
+            <br /><br />
+            <section id="samples">
+               Phasellus varius sed nisl ut rutrum. Suspendisse potenti. Vestibulum pretium tincidunt purus, nec molestie quam
+               ullamcorper bibendum. Nunc sed faucibus nisi. Aliquam a tincidunt enim. Cras nec porttitor eros. Ut mattis ante luctus
+               vulputate fermentum. Vestibulum rutrum justo ut vehicula pretium. Maecenas in quam vitae ligula tincidunt volutpat.
+               Pellentesque eu ullamcorper est. Vestibulum vehicula tempus mauris vitae pulvinar.
+            </section>
+            <br /><br />
+            <section id="bookings">
+               Cras commodo nisl metus, et ultricies purus ultrices id. Praesent feugiat augue nisl, eu fringilla tellus bibendum
+               tempor. Maecenas elementum eros nec lorem fringilla, a lobortis mi consequat. Donec eget lobortis nulla. Etiam malesuada
+               velit nec mi dictum porta. Duis non sapien commodo, consequat leo ac, accumsan ligula. Nam sapien velit, ornare id
+               elementum eget, rhoncus ut enim. Vestibulum ultricies interdum risus, non venenatis urna cursus sit amet. Nulla lectus
+               arcu, eleifend a ipsum quis, tincidunt posuere purus. Etiam convallis eros sit amet finibus iaculis. Ut erat massa,
+               convallis in dui in, blandit convallis eros. Aliquam euismod sapien diam, id cursus nulla molestie ultricies. Maecenas
+               aliquet leo vitae dolor porta, sed varius erat bibendum.
+               Maecenas condimentum porta est quis pharetra. Vivamus nec eleifend purus. Aliquam elementum justo non felis pulvinar,
+               non egestas nibh pretium. Suspendisse potenti. Suspendisse luctus, elit eu euismod laoreet, neque felis mollis odio, sed
+               faucibus arcu est quis tellus. Donec nec mauris ut risus tristique molestie ac a purus. Suspendisse eget eros sit amet
+               est rhoncus ultricies nec eget metus. Sed bibendum sem vitae ipsum aliquam, vitae dignissim risus posuere. Sed commodo
+               ex a massa tincidunt sollicitudin. Aliquam nisl ante, malesuada ac arcu sed, hendrerit lacinia metus. Cras ac ipsum
+               ligula.
+            </section>
+         </div>
+         <div id="right-padder" class="padder"></div>
+      </div>
+   
+      
+   
+   </div>
+
+   <script>
+      function getUrlVars() {
+         var vars = {}
+         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+            vars[key] = value
+         })
+         return vars
+      }
+
+      function getUrlParam(parameter, defaultvalue) {
+         var urlparameter = defaultvalue
+         if (window.location.href.indexOf(parameter) > -1) {
+            urlparameter = getUrlVars()[parameter]
+         }
+
+         return urlparameter
+      }
+
+      function GoToSection(section) {
+         switch (section) {
+            case "home":
+               // Scroll to top
+               break
+            case "about":
+               // Scroll down to about
+               break
+            case "samples":
+               // Scroll down to samples
+               break
+            case "bookings":
+            // Scroll down to bookings
+         }
+      }
+
+      document.addEventListener('DOMContentLoaded', GoToSection(getUrlParam("section", "home")))
+
+      function SetArrowPos() {
+         var arrow = $("#continue_arrow_wrapper")
+         var top = window.innerHeight * .8
+         arrow.css("top", top)
+      }
+
+      function SetShaderPos() {
+         var shader = $("#bg_shader")
+         shader.css("width", window.innerWidth)
+         shader.css("height", window.innerHeight)
+      }
+
+      function SetFadeSize() {
+         $("#bg_shader").css("height", ("calc(" + $("body").css("height") + " + 1.5em)").toString()).animate({opacity: .75}, 750)
+      }
+
+      window.addEventListener('resize', (e) => {
+         SetArrowPos()
+         SetShaderPos()
+         SetFadeSize()
+      })
+
+      $(document).ready(function () {
+         // Center the background image
+         SetArrowPos()
+         SetShaderPos()
+
+         $("#continue_arrow").on("mousedown", () => {
+            $("#continue_arrow_wrapper").css("display", "none")
+            $("#inner_body").css("opacity", 0).css("display", "block").animate({opacity: 1}, 750)
+            SetFadeSize()
+         })
+      })
+   </script>
+</body>
+
+</html>
