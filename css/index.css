@@ -1,14 +1,6 @@
-:root {
-   --parallax-bg1-width: 1500;
-   --parallax-bg1-height: 943;
-}
-
-
 /* Persistent elements */
 body {
    background-color: black;
-
-   height: 100%;
    
    margin: 0px;
 
@@ -18,7 +10,7 @@ body {
    color: white;
    text-align: justify;
 
-   overflow-x: hidden;
+   overflow-y: auto;
 }
 
 
@@ -77,16 +69,16 @@ body {
 
 
 
+/* Main chunks */
 .main-wrapper {
    height: 100vh;
 
+   background-color: black;
+
    overflow-x: hidden;
-   overflow-y: auto;
 
    perspective: 4px;
 }
-
-
 
 .section {
    position: relative;
@@ -98,7 +90,7 @@ body {
 
 
 
-/* Record parallax image */
+/* Parallax scrolling classes */
 .parallax::after {
    content: " ";
 
@@ -135,8 +127,6 @@ body {
    z-index: -99;
 }
 
-
-
 .static {
    display: relative;
 
@@ -147,13 +137,13 @@ body {
    padding-top: 1em;
    padding-bottom: 1em;
 
-   margin-top: -1px;
+   margin-top: -3px;
 }
 
 
 
 /* ABOUT block */
-#content1 {
+#about {
    display: grid;
    position: relative;
 
@@ -163,22 +153,24 @@ body {
    z-index: 5;
 }
 
-#content1-text {
+#about-inner {
    display: grid;
 
    height: 300px;
+
+   margin-left: 1.5em;
    
    grid-template-rows: auto min-content auto;
    grid-auto-flow: row;
 }
 
-#content1-text h1 {
+#about-inner h1 {
    font-weight: lighter;
 
    font-size: 2em;
 }
 
-#about {
+#about-text {
    padding-left: 1.5em;
 }
 
@@ -256,6 +248,7 @@ body {
 
 .sample {
    width: 40vw;
+   min-width: 500px;
 }
 
 .sample iframe {
@@ -280,11 +273,4 @@ body {
    grid-template-columns: 10% auto 10%;
 
    transform-style: flat;
-}
-
-#content3 {
-   display: grid;
-   position: relative;
-
-   grid-template-columns: 10% auto 10%;
 }
